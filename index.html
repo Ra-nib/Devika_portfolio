@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devika Gautam Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/b3b9eadc77.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <div id="header">
+        <div class="container">
+            <nav>
+                <!-- Logo -->
+                <img src="dgd.png" class="logo">
+
+                <!-- Navigation Menu -->
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
+                    <!-- Close icon -->
+                    <i class="fa-solid fa-xmark close-icon" onclick="closemenu()"></i>
+                </ul>
+
+                <!-- Menu Icon for Mobile (Hamburger icon) -->
+                <i class="fa-solid fa-bars menu-icon" onclick="openmenu()"></i>
+            </nav>
+
+            <!-- Header Text -->
+            <div class="header-text">
+                <p><span class="bold-text">Aspiring Software Development Engineer</span></p>
+                <h1>Hey, <br> I'm <span>Devika Gautam</span></h1>
+                <p>A passionate and enthusiastic developer eager to <br>leverage my skills in solving real-world challenges.</p>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    <!-- JavaScript for Menu Toggle -->
+    <script>
+        // Function to open the sidebar menu
+        function openmenu() {
+            document.getElementById("sidemenu").style.right = "0";
+        }
+
+        // Function to close the sidebar menu
+        function closemenu() {
+            document.getElementById("sidemenu").style.right = "-200px";
+        }
+
+        document.querySelector('.menu-icon').addEventListener('click', function() {
+        openmenu();
+    });
+    
+    // Close the sidebar when the close icon (×) is clicked
+    document.querySelector('.close-icon').addEventListener('click', function() {
+        closemenu();
+    });
+    
+    </script>
+   
+</body>
+</html>
+
+
+
+    <!-- About Section -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <!-- About Column 1 -->
+                <div class="about-col-1">
+                    <img src="q.jpg" alt="User Image">
+                </div>
+                <!-- About Column 2 -->
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>
+                        I am a third-year B.Tech student in Civil Engineering at IIT Roorkee, driven by a passion for technology and problem-solving. 
+                        At IIT Roorkee, I have undertaken projects that showcase my ability to apply theoretical concepts to practical applications, reflecting my interest in innovation and emerging technologies. I thrive in collaborative environments and enjoy tackling complex problems, always striving to deliver impactful solutions.  
+                        Beyond academics, I am committed to continuous learning and staying abreast of the latest advancements in the tech industry, with a goal of contributing meaningfully to the field and making a lasting difference.
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab(event, 'skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab(event, 'achievements')">Achievements</p>
+                        <p class="tab-links" onclick="opentab(event, 'education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Programming Languages</span><br> C++, Python</li>
+                            <li><span>Front End</span><br>HTML, CSS, JavaScript</li>
+                            <li><span>Back End</span><br>SQL</li>
+                            <li><span>Software & Tools</span><br> VSCode, Jupyter Notebook, GIS Tools (QGIS)</li>
+                            <li><span>Domains</span><br>Data Structures and Algorithms (DSA), Data Analytics, Machine Learning/Artificial Intelligence (ML/AI)</li> 
+                        </ul>
+                    </div>
+                   
+                    <div class="tab-contents" id="achievements">
+                        <div class="container">
+                            <div class="row">
+                                <div class="achievement-col">
+                                    <ul>
+                                        <li>3UK CTR NCC, Camp</li>
+                                        <li>B Certificate, NCC</li>
+                                        <li>Certificate of Appreciation in Sarojini Bhawan Day</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2022-2026</span><br> Btech (CE) Indian Institute of Technology Roorkee</li>
+                            <li><span>2020-2021</span><br>12th(CBSE) St Francis Convent Sr. Sec. School</li>
+                            <li><span>2018-2019</span><br>10th(CBSE) St Francis Convent Sr. Sec. School</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects Section -->
+    <div id="projects">
+        <div class="container">
+            <h1 class="sub-title">My Projects</h1>
+            <div class="project-list">
+                <!-- Project 1 -->
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>OCR Sheet Checker</h2>
+                    <p>Developed an efficient OCR sheet-checking system to automate grading and analysis of multiple-choice answer sheets using Python 3.9 and VSCode at Aries, IIT Roorkee.</p>
+                    <a href="https://github.com/Devik-a/MCQ-sheet-checking-system" target="_blank">Learn More</a>
+                </div>
+                <!-- Project 2 -->
+                <div>
+                    <i class="fa-solid fa-server"></i>
+                    <h2>CPU Scheduler</h2>
+                    <p>Developed a CPU Scheduling simulator to simulate algorithms like FCFS, SJN, RR, and Priority Scheduling for optimizing CPU resource usage in multitasking systems using C++17 and VSCode at ASME, IIT Roorkee.</p>
+                    <a href="https://github.com/Ra-nib/cpu_schedular" target="_blank">Learn More</a>
+                </div>
+                <!-- Project 3 -->
+                <div>
+                    <i class="fa-solid fa-head-side-virus"></i>
+                    <h2>Groundwater Prediction</h2>
+                    <p>Developing a predictive model to forecast groundwater levels using historical data, environmental factors, and geographical features in the Civil Engineering Department, IIT Roorkee.</p>
+                    <a href="certificate/groundwater-prediction-certificate.pdf" target="_blank">Learn More</a>
+                </div>
+                <!-- Project 4 -->
+                <div>
+                    <i class="fa-solid fa-water"></i>
+                    <h2>Estimation of Water Balance Components</h2>
+                    <p>Collected and analyzed hydrological data for river basins, applied water balance equations to assess water management challenges and solutions. Civil Engineering Department, IIT Roorkee.</p>
+                    <a href="https://github.com/your-username/water-balance-project" target="_blank">Learn More</a>
+                </div>
+                <!-- Project 5 -->
+                <div>
+                    <i class="fa-solid fa-map"></i>
+                    <h2>Geomatics Survey Camp Project</h2>
+                    <p>Developed a digital Geo-referenced Utility Map of Chandi Ghat region in Haridwar district, Uttarakhand using Geographical Information System(GIS). Devices used: GPS, Total Station. Software Used: QGIS. Civil Engineering Department, IIT Roorkee.</p>
+                    <a href="certificate/geomatics-survey-certificate.pdf" target="_blank">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+      <!-- Experience Section -->
+      <div id="experience">
+        <div class="container">
+            <h1 class="sub-title">Experience</h1>
+    
+            <!-- Row 1 -->
+            <div class="experience-list">
+                <div class="experience">
+                    <img src="smp.jpg" alt="SMP Online Competition">
+                    <div class="layer">
+                        <h3>Operations Manager<br>(SMP, IITR)</h3>
+                        <p>
+                             
+Managed the mentorship process(Student Mentorship Programme ), facilitating seamless connections between UG freshmen and mentors to support their academic and non-academic growth.
+                        </p>
+                        <a href="https://ecertificate-certificates-files.s3.amazonaws.com/0a822298-241a-4768-bb05-26ef52fdab39.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT4QCDQECUAR7ZRGM%2F20241215%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20241215T180259Z&X-Amz-Expires=30&X-Amz-SignedHeaders=host&X-Amz-Signature=48f9cde2a23dcd6d99b40aec507bf86ecd1725e44bedb58d85dc1014414b80b3" target="_blank"> More</a>
+                    </div>
+                </div>
+                <div class="experience">
+                    <img src="caaa.jpg" alt="Online Competition Judges">
+                    <div class="layer">
+                        <h3>Online Competition Judges</h3>
+                        <p>
+                            I have actively participated in competitive programming contests on platforms like CodeChef, Codeforces, and LeetCode.
+Through consistent practice, I have solved over 450 problems across these platforms, focusing on mastering Data
+Structures and Algorithms (DSA). This experience has honed my problem-solving skills, logical thinking, and ability to
+perform under pressure.
+                        </p>
+                        <a href="https://www.codechef.com/users/devika_rani05" target="_blank"> More</a>
+                    </div>
+                </div>
+            
+                <div class="experience">
+                    <img src="n.png" alt="NSS Volunteer">
+                    <div class="layer">
+                        <h3>NSS Volunteer (IITR)</h3>
+                        <p>
+                            Actively participated in social initiatives(National Social Service), including organizing blood donation drives and 
+                            community awareness campaigns, showcasing dedication to societal improvement.
+                        </p>
+                        <a href="https://ecertificate-certificates-files.s3.amazonaws.com/226af09b-87d3-48e1-bc2d-a02298a316f8.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT4QCDQECUAR7ZRGM%2F20241215%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20241215T180717Z&X-Amz-Expires=30&X-Amz-SignedHeaders=host&X-Amz-Signature=eb8ac8edd40f113e86e090b3bdb6c4de9909b659140594e42f5593eab6f22095" target="_blank"> More</a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Row 2 -->
+            <div class="experience-list">
+                <div class="experience">
+                    <img src="design.jpg" alt="Design Manager">
+                    <div class="layer">
+                        <h3>Design Manager (CEC,IITR)</h3>
+                        <p>
+  
+Managed and coordinated design projects within the Civil Engineering Core Club(Civil Engineering Consortium), overseeing the creative process and ensuring smooth execution of activities.
+                            
+                        </p>
+                        <a href="https://www.codechef.com/users/devika_rani05" target="_blank"> More</a>
+                    </div>
+                </div>
+                <div class="experience">
+                    <img src="ncc.jpg" alt="NCC Cadet">
+                    <div class="layer">
+                        <h3>Cadet (NCC, IITR)</h3>
+                        <p>
+                            
+Participated in various activities emphasizing discipline, social service, and weapons training, while contributing to welfare through Blood Donation Camps and earning the 'B' certificate.
+                            Developed discipline, leadership, and teamwork skills while participating in various camps and 
+                            drills as an NCC(National Cadet Corps) Cadet.
+                        </p>
+                        <a href="https://ecertificate-certificates-files.s3.amazonaws.com/ee386441-81b9-40d5-b05d-f00746a3c85f.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT4QCDQECUAR7ZRGM%2F20241215%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20241215T181828Z&X-Amz-Expires=30&X-Amz-SignedHeaders=host&X-Amz-Signature=458a85ebf178cad636e337ae9e805dddd2b496d3746baee3dbb057a320b44672" target="_blank"> More</a>
+                    </div>
+                </div>
+                <div class="experience">
+                    <img src="k.jpg" alt="Kshitij Coordinator">
+                    <div class="layer">
+                        <h3>Kshitij (Member, IITR)</h3>
+                        <p>
+                            Successfully coordinated "Kshitij," a cultural fest at IIT Roorkee, ensuring smooth operations and 
+                            fostering a vibrant environment for participants.
+                        </p>
+                        <a href="https://www.codechef.com/users/devika_rani05" target="_blank"> More</a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Row 3 -->
+            <div class="experience-list">
+                <div class="experience">
+                    <img src="op.jpg" alt="Google Data Analytics">
+                    <div class="layer">
+                        <h3>Google Data Analytics Certification</h3>
+                        <p>
+                            Completed Google's Data Analytics Professional Certification, acquiring expertise in data cleaning, 
+                            visualization, and statistical analysis.
+                        </p>
+                        <a href= "dd.jpg"target="_blank"> More</a>
+                    </div>
+                </div>
+                <div class="experience">
+                    <img src="san.png" alt="ISC Coordinator">
+                    <div class="layer">
+                        <h3>Coordinator (ISC,IITR)</h3>
+                        <p>
+                            Coordinated "Sangram(Institute sports council)," the annual sports fest at IIT Roorkee, fostering teamwork and demonstrating leadership to ensure a successful and memorable event for all participants.
+                        </p>
+                        <a href="https://ecertificate-certificates-files.s3.amazonaws.com/12e5b967-36a8-43a6-b061-8f59e3b9a72b.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT4QCDQECUAR7ZRGM%2F20241215%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20241215T181951Z&X-Amz-Expires=30&X-Amz-SignedHeaders=host&X-Amz-Signature=9954d5d149bfe0302feb14431dcf68b5c78ccc827e09cb3fa26d31fa330bc939" target="_blank"> More</a>
+                    </div>
+                </div>
+                <div class="experience">
+                    <img src="cogni.jpg" alt="Cognizance Coordinator">
+                    <div class="layer">
+                        <h3>Coordinator <br> (Cognizance IITR)</h3>
+                        <p>
+                            Contributed to IIT Roorkee's annual tech fest by managing operations and creating an engaging 
+                            environment for participants.
+                        </p>
+                        <a href="https://hyperstack.id/credential/35eef9a9-da4a-42ee-a141-157d20b5c8ad?view=recipient" target="_blank"> More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="https://credsverse.com/credentials/70e630ba-9fbc-4a78-815f-1eb0e71be7ab" class="btn">See More</a>
+        </div>
+    </div>
+    
+          
+        
+   <!------------------------contact-->
+   
+   <div id="contact" style="background: #000;">
+    <div class="container">
+        <div class="row">
+            <!-- Contact Left Section -->
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i> devika_g@ce.iitr.ac.in</p>
+                <p><i class="fa-solid fa-square-phone"></i> 7693062246</p>
+                <div class="social-icons">
+                    <a href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/in/devika-gautam-7b168630a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="devikagautam2003@gmail.com"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="devikagautam2003@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+                <a href="my_cv" download class="btn btn2">Download CV</a>
+            </div>
+
+            <!-- Contact Right Section -->
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright @ Made by <i class="fa-solid fa-heart"></i> Devika Gautam</p>
+    </div>
+</div>
+
+<script>
+    function updateLogo() {
+        const logo = document.getElementById('logo');
+        if (window.innerWidth <= 768) {
+            // Mobile view
+            logo.src = 'logo.png'; // Path to your mobile logo
+        } else {
+            // Desktop view
+            logo.src = 'dgd.png'; // Path to your desktop logo
+        }
+    }
+
+    // Run on page load
+    updateLogo();
+
+    // Run on window resize
+    window.addEventListener('resize', updateLogo);
+</script>
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(event, tabname){
+        for (tablink of tablinks) {
+            tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents) {
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+<script>
+    var sidemenu=document.getElementById("sidemenu");
+    function openmenu(){
+        sidemenu.style.right="0";
+    }
+    function closemenu(){
+sidemenu.style.right="-200px";
+    }
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzLz-mtP3IffoXSqlZbCilWffulKkUCuUhlItnKXJtaD_avWYdqolq9Ao76zYlFykaVwA/exec'
+        const form = document.forms['submit-to-google-sheet']
+      const msg=document.getElementById("msg")
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {msg.innerHTML="Message sent successfully"
+                setTimeout(function(){
+                    msg.innerHTML=""
+                },5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+
+
+
+</body>
+</html>
