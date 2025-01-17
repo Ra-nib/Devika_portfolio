@@ -1,205 +1,428 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="assets/css/styles.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devika Gautam - Modern Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-        <!-- =====BOX ICONS===== -->
-        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
 
-        <title>Portfolio website complete</title>
-    </head>
-    <body>
-        <!--===== HEADER =====-->
-        <header class="l-header">
-            <nav class="nav bd-grid">
-                <div>
-                    <a href="#" class="nav__logo">Marlon</a>
+        .gradient-bg {
+            background: linear-gradient(45deg, #3B82F6, #8B5CF6, #EC4899);
+            background-size: 200% 200%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .card {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-white">
+    <div id="particles-js"></div>
+    <nav class="fixed w-full z-10 backdrop-filter backdrop-blur-lg bg-opacity-30 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-xl font-bold">DG</a>
                 </div>
-
-                <div class="nav__menu" id="nav-menu">
-                    <ul class="nav__list">
-                        <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
-                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-                        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
-                        <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
-                        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
-                    </ul>
-                </div>
-
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class='bx bx-menu'></i>
-                </div>
-            </nav>
-        </header>
-
-        <main class="l-main">
-            <!--===== HOME =====-->
-            <section class="home bd-grid" id="home">
-                <div class="home__data">
-                    <h1 class="home__title">Hi,<br>I'am <span class="home__title-color">Marlon</span><br> Web Designer</h1>
-
-                    <a href="#" class="button">Contact</a>
-                </div>
-
-                <div class="home__social">
-                    <a href="" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
-                    <a href="" class="home__social-icon"><i class='bx bxl-behance' ></i></a>
-                    <a href="" class="home__social-icon"><i class='bx bxl-github' ></i></a>
-                </div>
-
-                <div class="home__img">
-                    <svg class="home__blob" viewBox="0 0 479 467" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <mask id="mask0" mask-type="alpha">
-                            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
-                        </mask>
-                        <g mask="url(#mask0)">
-                            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
-                            <image class="home__blob-img" x="50" y="60" href="assets/img/perfil.png"/>
-                        </g>
-                    </svg>
-                </div>
-            </section>
-
-            <!--===== ABOUT =====-->
-            <section class="about section " id="about">
-                <h2 class="section-title">About</h2>
-
-                <div class="about__container bd-grid">
-                    <div class="about__img">
-                        <img src="assets/img/about.jpg" alt="">
-                    </div>
-                    
-                    <div>
-                        <h2 class="about__subtitle">I'am Marlon</h2>
-                        <p class="about__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate cum expedita quo culpa tempora, assumenda, quis fugiat ut voluptates soluta, aut earum nemo recusandae cumque perferendis! Recusandae alias accusamus atque.</p>           
-                    </div>                                   
-                </div>
-            </section>
-
-            <!--===== SKILLS =====-->
-            <section class="skills section" id="skills">
-                <h2 class="section-title">Skills</h2>
-
-                <div class="skills__container bd-grid">          
-                    <div>
-                        <h2 class="skills__subtitle">Profesional Skills</h2>
-                        <p class="skills__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit optio id vero amet, alias architecto consectetur error eum eaque sit.</p>
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxl-html5 skills__icon'></i>
-                                <span class="skills__name">HTML5</span>
-                            </div>
-                            <div class="skills__bar skills__html">
-
-                            </div>
-                            <div>
-                                <span class="skills__percentage">95%</span>
-                            </div>
-                        </div>
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxl-css3 skills__icon'></i>
-                                <span class="skills__name">CSS3</span>
-                            </div>
-                            <div class="skills__bar skills__css">
-                                
-                            </div>
-                            <div>
-                                <span class="skills__percentage">85%</span>
-                            </div>
-                        </div>
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxl-javascript skills__icon' ></i>
-                                <span class="skills__name">JAVASCRIPT</span>
-                            </div>
-                            <div class="skills__bar skills__js">
-                                
-                            </div>
-                            <div>
-                                <span class="skills__percentage">65%</span>
-                            </div>
-                        </div>
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class='bx bxs-paint skills__icon'></i>
-                                <span class="skills__name">UX/UI</span>
-                            </div>
-                            <div class="skills__bar skills__ux">
-                                
-                            </div>
-                            <div>
-                                <span class="skills__percentage">85%</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div>              
-                        <img src="assets/img/work3.jpg" alt="" class="skills__img">
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="#about" class="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        <a href="#projects"
+                            class="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+                        <a href="#experience"
+                            class="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Experience</a>
+                        <a href="#contact"
+                            class="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
                     </div>
                 </div>
-            </section>
-
-            <!--===== WORK =====-->
-            <section class="work section" id="work">
-                <h2 class="section-title">Work</h2>
-
-                <div class="work__container bd-grid">
-                    <a href="" class="work__img">
-                        <img src="assets/img/work1.jpg" alt="">
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="assets/img/work2.jpg" alt="">
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="assets/img/work3.jpg" alt="">
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="assets/img/work4.jpg" alt="">
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="assets/img/work5.jpg" alt="">
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="assets/img/work6.jpg" alt="">
-                    </a>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button"
+                        class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                        <i class="fas fa-bars"></i>
+                    </button>
                 </div>
-            </section>
-
-            <!--===== CONTACT =====-->
-            <section class="contact section" id="contact">
-                <h2 class="section-title">Contact</h2>
-
-                <div class="contact__container bd-grid">
-                    <form action="" class="contact__form">
-                        <input type="text" placeholder="Name" class="contact__input">
-                        <input type="mail" placeholder="Email" class="contact__input">
-                        <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
-                        <input type="button" value="Enviar" class="contact__button button">
-                    </form>
-                </div>
-            </section>
-        </main>
-
-        <!--===== FOOTER =====-->
-        <footer class="footer">
-            <p class="footer__title">Marlon</p>
-            <div class="footer__social">
-                <a href="#" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
-                <a href="#" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
-                <a href="#" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
             </div>
-            <p class="footer__copy">&#169; Bedimcode. All rigths reserved</p>
-        </footer>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#about" class="hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="#projects"
+                    class="hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+                <a href="#experience"
+                    class="hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Experience</a>
+                <a href="#contact"
+                    class="hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
 
+    <header id="home" class="gradient-bg min-h-screen flex items-center justify-center">
+        <div class="text-center">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4">Devika Gautam</h1>
+            <p class="text-xl md:text-2xl mb-8">I'm a <span id="typed"></span></p>
+            <a href="#contact"
+                class="bg-white text-gray-900 px-8 py-3 rounded-full font-bold hover:bg-gray-200 transition duration-300">Get
+                In Touch</a>
+        </div>
+    </header>
 
-        <!--===== SCROLL REVEAL =====-->
-        <script src="https://unpkg.com/scrollreveal"></script>
+    <section id="about" class="py-20 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold mb-8 text-center">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/3">
+                    <img src="q.jpg" alt="Devika Gautam" class="rounded-lg shadow-lg w-full animate-float">
+                </div>
+                <div class="md:w-2/3">
+                    <p class="text-lg mb-6">
+                        I am a third-year B.Tech student in Civil Engineering at IIT Roorkee, driven by a passion for
+                        technology and problem-solving.
+                        At IIT Roorkee, I have undertaken projects that showcase my ability to apply theoretical
+                        concepts to practical applications, reflecting my interest in innovation and emerging
+                        technologies.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="card p-4 rounded-lg">
+                            <h3 class="text-xl font-semibold mb-2">Skills</h3>
+                            <ul class="list-disc list-inside">
+                                <li>C++, Python</li>
+                                <li>HTML, CSS, JavaScript</li>
+                                <li>SQL, Data Analytics</li>
+                                <li>DSA, ML/AI</li>
+                            </ul>
+                        </div>
+                        <div class="card p-4 rounded-lg">
+                            <h3 class="text-xl font-semibold mb-2">Achievements</h3>
+                            <ul class="list-disc list-inside">
+                                <li>3UK CTR NCC, Camp</li>
+                                <li>B Certificate, NCC</li>
+                                <li>Certificate of Appreciation</li>
+                            </ul>
+                        </div>
+                        <div class="card p-4 rounded-lg">
+                            <h3 class="text-xl font-semibold mb-2">Education</h3>
+                            <ul class="list-disc list-inside">
+                                <li>B.Tech, IIT Roorkee (2022-2026)</li>
+                                <li>12th, St Francis Convent (2020-2021)</li>
+                                <li>10th, St Francis Convent (2018-2019)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!--===== MAIN JS =====-->
-        <script src="assets/js/main.js"></script>
-    </body>
+    <section id="projects" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold mb-8 text-center">My Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card p-6 rounded-lg">
+                    <i class="fas fa-code text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">OCR Sheet Checker</h3>
+                    <p class="text-gray-300 mb-4">Developed an efficient OCR sheet-checking system to automate grading
+                        and analysis of multiple-choice answer sheets using Python 3.9 and VSCode at Aries, IIT Roorkee.
+                    </p>
+                    <a href="https://github.com/Devik-a/MCQ-sheet-checking-system" target="_blank"
+                        class="text-blue-400 hover:underline">Learn More</a>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <i class="fas fa-server text-4xl text-green-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">CPU Scheduler</h3>
+                    <p class="text-gray-300 mb-4">Developed a CPU Scheduling simulator to simulate algorithms like FCFS,
+                        SJN, RR, and Priority Scheduling for optimizing CPU resource usage in multitasking systems using
+                        C++17 and VSCode at ASME, IIT Roorkee.</p>
+                    <a href="https://github.com/Ra-nib/cpu_schedular" target="_blank"
+                        class="text-green-400 hover:underline">Learn More</a>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <i class="fas fa-brain text-4xl text-purple-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Groundwater Prediction</h3>
+                    <p class="text-gray-300 mb-4">Developing a predictive model to forecast groundwater levels using
+                        historical data, environmental factors, and geographical features in the Civil Engineering
+                        Department, IIT Roorkee.</p>
+                    <a href="certificate/groundwater-prediction-certificate.pdf" target="_blank"
+                        class="text-purple-400 hover:underline">Learn More</a>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <i class="fas fa-water text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Estimation of Water Balance Components</h3>
+                    <p class="text-gray-300 mb-4">Collected and analyzed hydrological data for river basins, applied
+                        water balance equations to assess water management challenges and solutions. Civil Engineering
+                        Department, IIT Roorkee.</p>
+                    <a href="https://github.com/your-username/water-balance-project" target="_blank"
+                        class="text-blue-400 hover:underline">Learn More</a>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <i class="fas fa-map text-4xl text-yellow-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Geomatics Survey Camp Project</h3>
+                    <p class="text-gray-300 mb-4">Developed a digital Geo-referenced Utility Map of Chandi Ghat region
+                        in Haridwar district, Uttarakhand using Geographical Information System(GIS). Devices used: GPS,
+                        Total Station. Software Used: QGIS.</p>
+                    <a href="certificate/geomatics-survey-certificate.pdf" target="_blank"
+                        class="text-yellow-400 hover:underline">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-20 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold mb-8 text-center">Experience</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card p-6 rounded-lg">
+                    <img src="smp.jpg" alt="SMP Online Competition" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Operations Manager (SMP, IITR)</h3>
+                    <p class="text-gray-300 mb-4">Managed the mentorship process (Student Mentorship Programme),
+                        facilitating seamless connections between UG freshmen and mentors to support their academic and
+                        non-academic growth.</p>
+                    <a href="https://ecertificate-certificates-files.s3.amazonaws.com/0a822298-241a-4768-bb05-26ef52fdab39.pdf"
+                        target="_blank" class="text-blue-400 hover:underline">View Certificate</a>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <img src="caaa.jpg" alt="Online Competition Judges"
+                        class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Online Competition Participant</h3>
+                    <p class="text-gray-300 mb-4">Actively participated in competitive programming contests on platforms
+                        like CodeChef, Codeforces, and LeetCode. Solved over 450 problems, focusing on mastering Data
+                        Structures and Algorithms (DSA).</p>
+                    <a href="https://www.codechef.com/users/devika_rani05" target="_blank"
+                        class="text-blue-400 hover:underline">View Profile</a>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <img src="n.png" alt="NSS Volunteer" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold mb-2">NSS Volunteer (IITR)</h3>
+                    <p class="text-gray-300 mb-4">Actively participated in social initiatives (National Social Service),
+                        including organizing blood donation drives and community awareness campaigns, showcasing
+                        dedication to societal improvement.</p>
+                    <a href="https://ecertificate-certificates-files.s3.amazonaws.com/226af09b-87d3-48e1-bc2d-a02298a316f8.pdf"
+                        target="_blank" class="text-blue-400 hover:underline">View Certificate</a>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <img src="design.jpg" alt="Design Manager" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Design Manager (CEC, IITR)</h3>
+                    <p class="text-gray-300 mb-4">Managed and coordinated design projects within the Civil Engineering
+                        Core Club (Civil Engineering Consortium), overseeing the creative process and ensuring smooth
+                        execution of activities.</p>
+                    <a href="#" target="_blank" class="text-blue-400 hover:underline">Learn More</a>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <img src="ncc.jpg" alt="NCC Cadet" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Cadet (NCC, IITR)</h3>
+                    <p class="text-gray-300 mb-4">Participated in various activities emphasizing discipline, social
+                        service, and weapons training, while contributing to welfare through Blood Donation Camps and
+                        earning the 'B' certificate.</p>
+                    <a href="https://ecertificate-certificates-files.s3.amazonaws.com/ee386441-81b9-40d5-b05d-f00746a3c85f.pdf"
+                        target="_blank" class="text-blue-400 hover:underline">View Certificate</a>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <img src="k.jpg" alt="Kshitij Coordinator" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Kshitij (Member, IITR)</h3>
+                    <p class="text-gray-300 mb-4">Successfully coordinated "Kshitij," a cultural fest at IIT Roorkee,
+                        ensuring smooth operations and fostering a vibrant environment for participants.</p>
+                    <a href="#" target="_blank" class="text-blue-400 hover:underline">Learn More</a>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <img src="op.jpg" alt="Google Data Analytics" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Google Data Analytics Certification</h3>
+                    <p class="text-gray-300 mb-4">Completed Google's Data Analytics Professional Certification,
+                        acquiring expertise in data cleaning, visualization, and statistical analysis.</p>
+                    <a href="dd.jpg" target="_blank" class="text-blue-400 hover:underline">View Certificate</a>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <img src="san.png" alt="ISC Coordinator" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Coordinator (ISC, IITR)</h3>
+                    <p class="text-gray-300 mb-4">Coordinated "Sangram (Institute sports council)," the annual sports
+                        fest at IIT Roorkee, fostering teamwork and demonstrating leadership to ensure a successful and
+                        memorable event for all participants.</p>
+                    <a href="https://ecertificate-certificates-files.s3.amazonaws.com/12e5b967-36a8-43a6-b061-8f59e3b9a72b.pdf"
+                        target="_blank" class="text-blue-400 hover:underline">View Certificate</a>
+                </div>
+                <div class="card p-6 rounded-lg">
+                    <img src="cogni.jpg" alt="Cognizance Coordinator" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Coordinator (Cognizance IITR)</h3>
+                    <p class="text-gray-300 mb-4">Contributed to IIT Roorkee's annual tech fest by managing operations
+                        and creating an engaging environment for participants.</p>
+                    <a href="https://hyperstack.id/credential/35eef9a9-da4a-42ee-a141-157d20b5c8ad?view=recipient"
+                        target="_blank" class="text-blue-400 hover:underline">View Certificate</a>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="https://credsverse.com/credentials/70e630ba-9fbc-4a78-815f-1eb0e71be7ab"
+                    class="bg-blue-600 text-white px-8 py-3 rounded-full font-bold hover:bg-blue-700 transition duration-300">See
+                    More</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold mb-8 text-center">Contact Me</h2>
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold mb-4">Get In Touch</h3>
+                    <p class="mb-4"><i class="fas fa-envelope mr-2"></i> devika_g@ce.iitr.ac.in</p>
+                    <p class="mb-4"><i class="fas fa-phone mr-2"></i> 7693062246</p>
+                    <div class="flex space-x-4 mb-6">
+                        <a href="https://facebook.com" class="text-white hover:text-blue-400 transition duration-300"><i
+                                class="fab fa-facebook text-2xl"></i></a>
+                        <a href="https://www.linkedin.com/in/devika-gautam-7b168630a"
+                            class="text-white hover:text-blue-400 transition duration-300"><i
+                                class="fab fa-linkedin text-2xl"></i></a>
+                        <a href="mailto:devikagautam2003@gmail.com"
+                            class="text-white hover:text-blue-400 transition duration-300"><i
+                                class="fab fa-instagram text-2xl"></i></a>
+                        <a href="mailto:devikagautam2003@gmail.com"
+                            class="text-white hover:text-blue-400 transition duration-300"><i
+                                class="fas fa-envelope text-2xl"></i></a>
+                    </div>
+                    <a href="RESUME_CODESS.pdf" download
+                        class="bg-blue-600 text-white px-6 py-2 rounded-full font-bold hover:bg-blue-700 transition duration-300">Download
+                        CV</a>
+                </div>
+                <div class="md:w-1/2">
+                    <form name="submit-to-google-sheet" id="contact-form">
+                        <div class="mb-4">
+                            <input type="text" name="Name" placeholder="Your Name" required
+                                class="w-full px-4 py-2 rounded-md bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <input type="email" name="Email" placeholder="Your Email" required
+                                class="w-full px-4 py-2 rounded-md bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <textarea name="Message" rows="6" placeholder="Your Message" required
+                                class="w-full px-4 py-2 rounded-md bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-blue-500"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="bg-blue-600 text-white px-6 py-2 rounded-full font-bold hover:bg-blue-700 transition duration-300">Send
+                            Message</button>
+                    </form>
+                    <div id="form-status" class="mt-4 text-green-400 hidden">Thank you for your message. We'll get back
+                        to you soon!</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>Copyright © 2023 | Made with <i class="fas fa-heart text-red-500"></i> by Devika Gautam</p>
+        </div>
+    </footer>
+
+    <script>
+        // Particles.js configuration
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: "#ffffff" },
+                shape: { type: "circle" },
+                opacity: { value: 0.5, random: false },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 6, direction: "none", random: false, straight: false, out_mode: "out", bounce: false }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" }, resize: true },
+                modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+            },
+            retina_detect: true
+        });
+
+        // Typed.js configuration
+        var typed = new Typed('#typed', {
+            strings: ['Aspiring Software Engineer', 'Problem Solver', 'Tech Enthusiast'],
+            typeSpeed: 50,
+            backSpeed: 50,
+            loop: true
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Form submission
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
+
+            fetch('https://script.google.com/macros/s/AKfycbzLz-mtP3IffoXSqlZbCilWffulKkUCuUhlItnKXJtaD_avWYdqolq9Ao76zYlFykaVwA/exec', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => {
+                    document.getElementById('form-status').classList.remove('hidden');
+                    form.reset();
+                })
+                .catch(error => console.error('Error!', error.message));
+        });
+    </script>
+</body>
+
 </html>
